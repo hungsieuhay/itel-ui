@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-:root {
-  height: 100%;
+section {
+  @apply py-28;
+}
+
+.section-title {
+  @apply font-itel font-bold text-6xl text-neutral-800 text-center uppercase mx-auto;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

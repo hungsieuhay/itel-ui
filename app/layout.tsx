@@ -77,9 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx("bg-white", DMSansVN.className, Itel.variable)}>
-        <MainLayout>
-          <div className="h-full">{children}</div>
-        </MainLayout>
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

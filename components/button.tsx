@@ -25,7 +25,7 @@ export const Button = ({
   return (
     <button
       className={clsx(
-        "flex items-center rounded-full font-bold text-base border border-transparent transition duration-300",
+        "flex items-center rounded-full font-bold text-base border transition duration-300",
         dataTheme,
         size === "small" &&
           `text-sm h-10 ${shape === "circle" ? "w-10" : "px-4"}`,

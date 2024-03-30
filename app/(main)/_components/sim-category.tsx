@@ -18,7 +18,7 @@ export const SimCategory = ({ title, subTitle, src }: SimCategoryProp) => {
         />
       </div>
       <div>
-        <p className="text-lg font-bold text-neutral-900 group-hover:text-neutral-0">
+        <p className="text-xl font-bold text-neutral-900 group-hover:text-neutral-0">
           {title}
         </p>
         <p className="text-base font-medium text-neutral-500 group-hover:text-neutral-0/90">
