@@ -19,13 +19,46 @@ import { Svg } from "@/icon/svg";
 import { DigitalTabItem } from "./_components/digital-tab-item";
 import { useState } from "react";
 import { DigitalTabContent } from "./_components/digital-tab-content";
+import { Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSlide } from "@/hooks/useSlider";
 
 const HomePage = () => {
-  const [digitalTabsId, setDigitalTabsId] = useState<number>(1);
+  const slideItem = useSlide({ totalSlide: 4 });
 
-  const onMouseEnter = (id: number) => {
-    setDigitalTabsId(id);
+  const onMouseEnter = (index: number) => {
+    slideItem.onChange(index);
   };
+
+  const onMouseLeave = (index: number) => {
+    slideItem.onChange(index);
+  };
+
+  const onClick = (index: number) => {
+    slideItem.onChange(index);
+  };
+
+  const inviewVariants: Variants = {
+    offscreen: {
+      opacity: 0,
+    },
+    onscreen: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    offscreen: { y: 40, opacity: 0 },
+    onscreen: { y: 0, opacity: 1, transition: { duration: 0.3 } },
+  };
+
+  const viewportOptions = { amount: 0.3, margin: "10000px 0px 0px 0px" };
 
   return (
     <div className="bg-neutral-0">
@@ -52,9 +85,18 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <section className="container space-y-16">
-        <h1 className="section-title max-w-2xl ">
-          ĐỎ Sim số. ĐÃ Data Dành riêng bạn!
+      <motion.section
+        className="container space-y-16"
+        variants={inviewVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={viewportOptions}
+      >
+        <h1 className="section-title">
+          <motion.div variants={itemVariants}>
+            <span className="text-red-500">ĐỎ Sim số</span>. ĐÃ Data
+          </motion.div>
+          <motion.div variants={itemVariants}>Dành riêng bạn!</motion.div>
         </h1>
         <div className="flex justify-center">
           {simCardFlip.map((item) => {
@@ -73,29 +115,43 @@ const HomePage = () => {
             );
           })}
         </div>
-      </section>
+      </motion.section>
       <div className="bg-neutral-50 overflow-hidden">
-        <section className="container text-center relative">
+        <motion.section
+          className="container text-center relative"
+          variants={inviewVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={viewportOptions}
+        >
           <h1 className="section-title max-w-xl">
-            SẮM ĐỒ CÔNG NGHỆ <span className="text-red-500">GHÉ SHOP ITEL</span>
+            <motion.div variants={itemVariants}>Ưu đãi đang lên</motion.div>
+            <motion.div variants={itemVariants} className="text-red-500">
+              Shopping tới bến
+            </motion.div>
           </h1>
-          <p className="text-base font-medium text-neutral-500 mt-2">
+          <motion.p
+            variants={itemVariants}
+            className="text-base font-medium text-neutral-500 mt-2"
+          >
             Thương hiệu lớn, ưu đãi khủng
-          </p>
-          <Image
+          </motion.p>
+          <motion.img
             alt=""
             src="/images/oppo.png"
             height={300}
             width={1100}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="absolute top-[30%] left-[40%]"
+            variants={itemVariants}
           />
-          <div className="mt-16 flex gap-x-10 overflow-x-auto no-scrollbar relative">
+          <div className="mt-16 flex gap-x-10 overflow-x-auto overflow-y-hidden no-scrollbar relative">
             {productData.map((product, index) => {
               return (
-                <div
+                <motion.div
                   key={product.id}
                   className={clsx((index + 1) % 2 === 0 ? "mt-16" : "mt-0")}
+                  variants={itemVariants}
                 >
                   <ProductCard
                     ram={product.ram}
@@ -109,64 +165,112 @@ const HomePage = () => {
                     salePrice={product.salePrice}
                     src={product.src}
                   />
-                </div>
+                </motion.div>
               );
             })}
           </div>
-        </section>
+        </motion.section>
       </div>
-      <section className="container">
+      <motion.section
+        className="container"
+        variants={inviewVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={viewportOptions}
+      >
         <div className="flex justify-between">
-          <div className="border-r border-neutral-200 w-full max-w-[32.25rem] mr-28">
+          <div className="border-r border-neutral-200 w-full max-w-[32.25rem] mr-28 z-10">
             <h1 className="section-title max-w-sm !text-start !mx-0">
-              Muôn vàn DỊCH VỤ số{" "}
-              <span className="text-red-500 text-7xl">Idigital</span>
+              <motion.div variants={itemVariants}>
+                Muôn vàn DỊCH VỤ số
+              </motion.div>
+              <motion.div
+                variants={itemVariants}
+                className="text-red-500 text-7xl"
+              >
+                Idigital
+              </motion.div>
             </h1>
             <ul className="mt-28">
-              {digitals.map((tab) => {
+              {digitals.map((tab, index) => {
                 return (
-                  <DigitalTabItem
-                    key={tab.id}
-                    label={tab.name}
-                    src={tab.icon}
-                    onMouseEnter={() => onMouseEnter(tab.id)}
-                  />
+                  <motion.div key={tab.id} variants={itemVariants}>
+                    <DigitalTabItem
+                      key={tab.id}
+                      label={tab.name}
+                      src={tab.icon}
+                      onMouseEnter={() => onMouseEnter(index)}
+                      onMouseLeave={() => onMouseLeave(index)}
+                      isActive={index === slideItem.index}
+                      onClick={() => onClick(index)}
+                    />
+                  </motion.div>
                 );
               })}
-              <div className="flex items-center gap-x-4 py-4 px-8 border-t border-t-neutral-200">
-                <p className="text-base font-bold text-neutral-800">
-                  Xem tất cả
-                </p>
-                <Svg
-                  src="/icons/arrow-right.svg"
-                  className="w-8 h-8 text-red-500"
-                />
-              </div>
+              <motion.div variants={itemVariants} className="mt-4">
+                <Button type="ghost">
+                  <p className="text-base font-bold text-neutral-800 group-hover:text-red-500">
+                    Xem tất cả
+                  </p>
+                  <Svg
+                    src="/icons/arrow-right.svg"
+                    className="w-8 h-8 ml-2 text-red-500"
+                  />
+                </Button>
+              </motion.div>
             </ul>
           </div>
-          <>
-            {digitals.map((item) => {
-              return (
-                <DigitalTabContent
-                  key={item.id}
-                  desc={item.desc}
-                  name={item.name}
-                  src={item.img}
-                  isActive={item.id === digitalTabsId}
-                />
-              );
-            })}
-          </>
+          <div className="flex-1">
+            <div className="block-img block-square">
+              <div className="absolute left-[-10%] top-[-10%] h-[120%] w-[120%]">
+                {digitals.map((item, index) => {
+                  return (
+                    <Image
+                      key={item.id}
+                      alt=""
+                      src={item.img}
+                      width={0}
+                      height={0}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className={clsx(
+                        "absolute inset-0 h-full w-full object-cover transition-all duration-500 transform-gpu",
+                        index > slideItem.index && "translate-x-1/4 opacity-0",
+                        index < slideItem.index && "-translate-x-1/4 opacity-0"
+                      )}
+                      loading="lazy"
+                    />
+                  );
+                })}
+              </div>
+            </div>
+            <DigitalTabContent
+              desc={digitals[slideItem.index].desc}
+              name={digitals[slideItem.index].name}
+            />
+          </div>
         </div>
-      </section>
-      <section className="space-y-[4.5rem] bg-neutral-50">
+      </motion.section>
+      <motion.section
+        className="space-y-[4.5rem] bg-neutral-50"
+        variants={inviewVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={viewportOptions}
+      >
         <h1 className="section-title max-w-lg">
-          Ngập tràn ưu đãi cùng <span className="text-red-500">iwow</span>
+          <motion.div variants={itemVariants}>Ngập tràn ưu đãi</motion.div>
+          <motion.div variants={itemVariants}>
+            cùng <span className="text-red-500">iwow</span>
+          </motion.div>
         </h1>
-        <div className="flex overflow-x-auto no-scrollbar gap-x-12">
+        <div className="flex overflow-x-auto overflow-y-hidden no-scrollbar gap-x-12">
           {iwows.map((item, index) => {
             return (
-              <div key={item.id} className="shrink-0 space-y-6">
+              <motion.div
+                variants={itemVariants}
+                key={item.id}
+                className="shrink-0 space-y-6"
+              >
                 {index % 2 === 0 && (
                   <p className="text-xl font-bold text-neutral-800 whitespace-pre-line">
                     {item.title}
@@ -185,11 +289,11 @@ const HomePage = () => {
                     {item.title}
                   </p>
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </div>
-      </section>
+      </motion.section>
       <div className="bg-neutral-100 py-20">
         <div className="container">
           <div className="grid grid-cols-4 gap-6">

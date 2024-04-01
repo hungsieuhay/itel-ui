@@ -66,7 +66,7 @@ const config: Config = {
         ".container": {
           maxWidth: "100%",
           "@screen xl": {
-            maxWidth: "1272px",
+            maxWidth: "1304px",
           },
         },
         ".block-img": {

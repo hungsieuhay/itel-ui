@@ -25,7 +25,7 @@ export const Button = ({
   return (
     <button
       className={clsx(
-        "flex items-center rounded-full font-bold text-base border transition duration-300",
+        "flex items-center rounded-full font-bold text-base border transition duration-300 group",
         dataTheme,
         size === "small" &&
           `text-sm h-10 ${shape === "circle" ? "w-10" : "px-4"}`,
@@ -40,7 +40,7 @@ export const Button = ({
         type === "tertiary" &&
           "bg-neutral-100 enabled:hover:text-red-500 text-neutral-800 disabled:opacity-50",
         type === "ghost" &&
-          "bg-transparent enabled:hover:text-red-500 enabled:hover:bg-neutral-100 text-neutral-800 disabled:opacity-30"
+          "bg-transparent border-none enabled:hover:text-red-500 enabled:hover:bg-neutral-100 text-neutral-800 disabled:opacity-30"
       )}
       type="button"
       disabled={disabled}
