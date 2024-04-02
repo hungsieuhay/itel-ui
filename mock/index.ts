@@ -1,8 +1,352 @@
+import { Navigations } from "@/type";
+
 export const subNavItem = [
   { id: 1, label: "Cá nhân", href: "/" },
   { id: 2, label: "Hợp tác", href: "/" },
   { id: 3, label: "Doanh nghiệp", href: "/" },
 ];
+
+export const mainNavBar = [
+  {
+    id: 1,
+    label: "Dịch vụ di động",
+    href: "/",
+    children: [
+      {
+        id: 1,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 2,
+        label: "Chọn số - Mua sim",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 3,
+        label: "Chọn số - Mua sim",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 4,
+        label: "Chọn số - Mua sim",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 5,
+        label: "Chọn số - Mua sim",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 6,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 7,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+    ],
+  },
+  {
+    id: 2,
+    label: "Ưu đãi iWow",
+    href: "/",
+    children: [
+      {
+        id: 1,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 2,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 3,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 4,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 5,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 6,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 7,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+    ],
+  },
+  {
+    id: 3,
+    label: "Mua sắm",
+    href: "/",
+    children: [
+      {
+        id: 1,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 2,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 3,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 4,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 5,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 6,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 7,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+    ],
+  },
+  {
+    id: 4,
+    label: "Giải trí",
+    href: "/",
+    children: [
+      {
+        id: 1,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 2,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 3,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 4,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 5,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 6,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 7,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+    ],
+  },
+  {
+    id: 5,
+    label: "Dịch vụ",
+    href: "/",
+    children: [
+      {
+        id: 1,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 2,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 3,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 4,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 5,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 6,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 7,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+    ],
+  },
+  {
+    id: 6,
+    label: "Hỗ trợ",
+    href: "/",
+    children: [
+      {
+        id: 1,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 2,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 3,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 4,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 5,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 6,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 7,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+    ],
+  },
+  {
+    id: 7,
+    label: "Hướng dẫn",
+    href: "/",
+    children: [
+      {
+        id: 1,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 2,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 3,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 4,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 5,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 6,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+      {
+        id: 7,
+        label: "Chọn số - Mua sim",
+        icon: "/icons/sim.svg",
+        desc: "Sắm sim số đẹp tạo dấu ấn riêng",
+      },
+    ],
+  },
+] as Navigations[];
 
 export const simCategory = [
   {
